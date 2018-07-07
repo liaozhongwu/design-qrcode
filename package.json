@@ -1,0 +1,31 @@
+{
+  "name": "design-qrcode",
+  "description": "design your qrcode",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "browser": "./dist/browser.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist/",
+    "types/"
+  ],
+  "author": {
+    "name": "liaozhongwu",
+    "email": "liaozhongwu95@163.com"
+  },
+  "dependencies": {
+    "jimp": "^0.2.28",
+    "qrcode": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/jpeg-js": "^0.3.0",
+    "@types/qrcode": "^0.8.1",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.8.2"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist & tsc -p . & node ./scripts/build",
+    "test": "node ./test/server"
+  }
+}

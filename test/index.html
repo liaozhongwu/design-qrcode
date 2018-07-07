@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>DesignQrcode.toDataURL Test</title>
+  <style>
+    img {
+      display: block;
+    }
+  </style>
+  <script type="text/javascript" src="../dist/browser.bundle.js"></script>
+</head>
+<body>
+  <script>
+    (async function () {
+      function showDesignQrcode(dataUrl) {
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        document.body.appendChild(img);
+      }
+
+      showDesignQrcode(await DesignQrcode.toDataURL("https://npmjs.com/package/design-qrcode"));
+      showDesignQrcode(await DesignQrcode.toDataURL({
+        content: "https://npmjs.com/package/design-qrcode",
+        background: {
+          image: './bg.png',
+        },
+      }));
+      showDesignQrcode(await DesignQrcode.toDataURL({
+        content: "https://npmjs.com/package/design-qrcode",
+        width: 320,
+        background: {
+          image: './bg.png',
+        },
+      }));
+      showDesignQrcode(await DesignQrcode.toDataURL({
+        content: "https://npmjs.com/package/design-qrcode",
+        width: 160,
+        background: {
+          image: './bg.png',
+          x: 80,
+          y: 80,
+        },
+      }));
+      showDesignQrcode(await DesignQrcode.toDataURL({
+        content: "https://npmjs.com/package/design-qrcode",
+        width: 267,
+        margin: 0,
+        background: {
+          image: './bg2.png',
+          width: 320,
+          height: 382,
+          x: 26,
+          y: 26,
+        },
+        comment: {
+          text: '大厅-桌台101',
+          font: '28px Arial',
+          color: 'red',
+          x: 160,
+          y: 356,
+        },
+      }));
+      showDesignQrcode(await DesignQrcode.toDataURL({
+        content: "https://npmjs.com/package/design-qrcode",
+        width: 267,
+        margin: 0,
+        background: {
+          image: './bg2.png',
+          width: 320,
+          height: 382,
+          x: 26,
+          y: 26,
+        },
+        comment: {
+          text: 'test',
+          font: '28px Arial',
+          color: 'red',
+          x: 160,
+          y: 356,
+        },
+      }));
+      showDesignQrcode(await DesignQrcode.toDataURL({
+        content: "https://npmjs.com/package/design-qrcode",
+        width: 267,
+        margin: 0,
+        background: {
+          image: './bg3.png',
+          width: 320,
+          height: 320,
+          x: 26,
+          y: 26,
+        },
+      }));
+    })();
+  </script>
+</body>
+</html>
